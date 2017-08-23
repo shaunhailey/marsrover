@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import getImageButton from './getImageButton'
+import GetImageButton from './GetImageButton'
 import ImageDisplay from './ImageDisplay'
 const API_KEY = 'UnMyhplRWTBlTHoaEBlnjms5yIzaUERnAxGQeCkW'
 
-class getImageForm extends Component {
+class GetImageForm extends Component {
   state = {
     rover: 'Curiosity',
     camera: 'FHAZ',
@@ -27,7 +27,7 @@ class getImageForm extends Component {
   }
   render() {
     return (
-      <div className="getImageForm">
+      <div className="GetImageForm">
         <form>
           <label htmlFor="rover">Rover</label>
           <select onChange={this._change} name="rover" value={this.state.rover}>
@@ -44,10 +44,10 @@ class getImageForm extends Component {
           <label htmlFor="sol">Martian Sol: 1000-2000</label>
           <input type="number" onChange={this._change} name="sol" max="2000" min="1000" value={this.state.sol} />
         </form>
-        <getImageButton onClick={this._fetchRoverImage} />
+        <GetImageButton onClick={this._fetchRoverImage} />
         <ImageDisplay images={this.state.photos} />
       </div>
     )
   }
 }
-export default getImageForm
+export default GetImageForm
